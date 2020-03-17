@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container-full {
+    min-height: 100vh;
+    max-width: 100vw;
+    background-color: #1e2d3b;
+}
+
+header {
+    height: 70px;
+    width: 100%;
+    background-color: rgb(46, 58, 70);
+}
+
+.container {
+    width: 1080px;
+    display: flex;
+    margin: 0 auto;
+}
+
+#logo-spotify {
+    height: 50px;
+    margin: 10px 0;
+}
