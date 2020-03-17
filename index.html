@@ -14,7 +14,7 @@
         <div class="container-full clearfix">
             <header>
                 <div class="container">
-                    <img id="logo-spotify" src="img/logo.png" alt="">
+                    <img id="logo-spotify" src="img/logo.png" alt="logo-spotify">
                 </div>
             </header>
             <div class="container container-carte">
@@ -24,7 +24,12 @@
         </div>
 
         <script id="card-template" type="text/x-handlebars-template">
-
+            <div class="card">
+                <img id="wallpaper-song" src="{{sourceAlbum}}" alt="{{album}}">
+                <h3 id="titolo-album">{{album}}</h3>
+                <span id="nome-artista">{{artista}}</span>
+                <span id="anno-uscita">{{anno}}</span>
+            </div>
         </script>
 
         <script src="js/main.js" charset="utf-8"></script>
