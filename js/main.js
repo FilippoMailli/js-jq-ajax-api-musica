@@ -9,6 +9,22 @@ $(document).ready(function() {
     var source = $("#card-template").html();
     var cardTemplate = Handlebars.compile(source);
 
+    $('.selettore-genere').change(function() {
+        var genereAttuale = $(this).val();      //DO COME VARIABILE QUELLO CHE ABBIAMO SELEZIONATO TRA I GENERI
+        // console.log(genereAttuale);          //ORA FACCIO SHOW DI QUELLI SELEZIONATI ALTRIMENTI SHOW TUTTI SE SELEZIONO NIENTE
+        if (genereAttuale == "") {
+            $('.card').show();                   //SE SELEZIONO "SCEGLI GENERE" MOSTRO TUTTE LE CARTE
+        } else {                                 //ALTRIMENTI
+            $('.card').each(function(){         //PER OGNI CLASSE CARD
+                if(genereAttuale.toLowerCase() == $(this).data('genere').toLowerCase()){    //SE QUELLO SELEZIONATO E' UGUALE A QUELLO CICLATO DA EACH (LOWERCASE)
+                    $(this).show();             //MOSTRA QUELLO CICLATO
+                } else {
+                    $(this).hide();             //NASCONDI QUELLO CICLATO
+                }
+            });
+        }
+    });
+
 
     $.ajax({
         url: "https://flynn.boolean.careers/exercises/api/array/music",
@@ -24,12 +40,14 @@ $(document).ready(function() {
                 var titolo =  arrayCanzoni[i].title;
                 var autore = arrayCanzoni[i].author;
                 var year = arrayCanzoni[i].year;
+                var genere = arrayCanzoni[i].genre;
                 //ORA INSERISCO TUTTI I DATI NEL TEMPLATE DI HANDLEBARS
                 var template = {
                     sourceAlbum: sorgenteAlbum,
                     album: titolo,
                     artista: autore,
-                    anno: year
+                    anno: year,
+                    genere: genere
                 }
 
                 var cardAlbum = cardTemplate(template);

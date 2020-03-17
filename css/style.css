@@ -28,6 +28,36 @@ header {
     margin: 0 auto;
 }
 
+.container-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.selettore-genere {
+    height: 100%;
+    background-color: #1e2d3b;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 200px;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid white;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    border-radius: .5em;
+}
+
+
 #logo-spotify {
     height: 50px;
     margin: 10px 0;

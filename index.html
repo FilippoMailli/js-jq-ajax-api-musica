@@ -13,8 +13,17 @@
     <body>
         <div class="container-full clearfix">
             <header>
-                <div class="container">
+                <div class="container container-header">
                     <img id="logo-spotify" src="img/logo.png" alt="logo-spotify">
+                    <div class="container-select">
+                        <select class="selettore-genere" name="">
+                            <option value="">Scegli genere</option>
+                            <option value="pop">Pop</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="metal">Metal</option>
+                            <option value="rock">Rock</option>
+                        </select>
+                    </div>
                 </div>
             </header>
             <div class="container container-carte">
@@ -22,7 +31,7 @@
         </div>
 
         <script id="card-template" type="text/x-handlebars-template">
-            <div class="card">
+            <div class="card" data-genere="{{genere}}">
                 <img id="wallpaper-song" src="{{sourceAlbum}}" alt="{{album}}">
                 <h3 id="titolo-album">{{album}}</h3>
                 <span id="nome-artista">{{artista}}</span>
